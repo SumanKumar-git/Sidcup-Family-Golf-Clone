@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color:#fff;
+
+}
+*::selection{
+    background-color: #fff;
+    color:#95c11e;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body::-webkit-scrollbar{
+    display:block;
+    width:8px;
+    background-color: #000000;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #95c11e;
+    border-radius: 4px;
+}
+#cursor{
+    height:20px;
+    width:20px;
+    border-radius:50%;
+    background-color:#95c11e;
+    position:fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height:400px;
+    width:400px;
+    border-radius:50%;
+    background-color:#96c11e52;
+    position:fixed;
+    filter:blur(50px);
+    z-index: 9;
+}
+
+#nav{
+    height:145px;
+    width:100%;
+    display:flex;
+    padding: 0 150px;
+    position:fixed;
+    align-items:center;
+    justify-content:flex-start;
+    gap:50px;
+    z-index: 99;
+}
+
+#nav img{
+    height:75px;
+}
+
+#nav h4{
+    text-transform:uppercase;
+    font-weight:500;
+}
+
+video{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    position:fixed;
+    z-index:-1;
+}
+
+#main{
+    position:relative;
+    background-color: rgba(0,0,0,0.45);
+}
+#page1{
+    height:100vh;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position:relative;
+    z-index: 10;
+}
+#page1 h1::before{
+    content:"EAT. DRINK. PLAY.";
+    position:absolute;
+    color:#000;
+    top:-4px;
+    left:-4px;
+    -webkit-text-stroke: 2px #95c11e;
+    z-index:-1;
+}
+
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top:10px;
+    margin-bottom:20px;
+    z-index: 10;
+}
+
+#page1 p{
+    font-size: 20px;
+    font-weight: 400;
+    width:50%;
+    z-index: 10;
+}
+
+#page1 #arrow{
+    height:180px;
+    width:180px;
+    background-color: transparent;
+    border-radius: 50%;
+    border:2px solid #95c11e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    left:-3.5%;
+    top:15.5%;
+    transition: all ease 0.5s;
+    z-index: 10;
+}
+#page1 #arrow i{
+    font-size: 50px;
+}
+#page1 #arrow:hover{
+    scale:0.4;
+    background-color: #95c11e;
+}
+
+#page1 #arrow:hover i{
+    font-size:100px ;
+}
+
+#page2{
+    min-height:100vh;
+    width:100%;
+    z-index: 10;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display:none;
+}
+
+#scroller-in{
+    display:inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4{
+    display:inline-block;
+    font-size:120px;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-right: 10px;
+    color:transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    -webkit-text-stroke: 1.5px #ffffff;
+    color: #000;
+    transition: all linear 0.3s;
+}
+
+#scroller h4:hover{
+    color:#95c11e;
+    -webkit-text-stroke: 1.5px #95c11e;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+}
+to{
+    transform:translateX(-100%);
+}
+}
+
+#about-us{
+    height:50vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 100px 100px 100px;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#about-us-in{
+    width:50%;
+    text-align: center;
+}
+
+#about-us-in h3{
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+#about-us-in p{
+    font-size: 20px;
+    line-height: 33px;
+}
+
+#cards-container{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:70px;
+    position: relative;
+    z-index: 10;
+    padding: 50px 0;
+}
+.card{
+    height:90%;
+    width:24%;
+    border-radius:20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+    background-image: url(page-toptracer.jpg);
+}
+
+.overlay{
+    height: 100%;
+    width:100%;
+    background-color: #95c11e;
+    border-radius:20px;
+    padding:30px;
+    padding-top:110px;
+    padding-bottom:20px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.overlay h4{
+    color: #000;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-bottom:18px;
+}
+.overlay p{
+    color:#000;
+    line-height: 24px;
+    font-size: 17px;
+}
+#card1 p{
+    padding-bottom: 15px;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(0.2,0.3,0,15deg);
+
+}
+#green-div{
+    height:40vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #39aa32, #a5d621 );
+    position: relative;
+    z-index: 10;
+}
+#green-div h4{
+    width: 50%;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+}
+#green-div img{
+    height: 100%;
+    width: 12%;
+    object-fit: cover;
+}
+
+#page3{
+    height:80vh;
+    width:100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3>p{
+    font-size: 28px;
+    font-weight: 900;
+    width: 58%;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 50px;
+    position: relative;
+    z-index: 10;
+    animation-name: textMove;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes textMove{
+    0%{
+        transform: translateX(2%);
+}
+50%{
+    transform: translateX(-2%);
+}
+100%{
+    transform: translateX(2%);
+}
+}
+
+#page3 img{
+    position:absolute;
+    height: 50px;
+}
+
+#page3 #colon1{
+    top:20%;
+    left:12%;
+}
+
+#page3 #colon2{
+    bottom:20%;
+    right:12%;
+}
+
+#page4{
+    height:50vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 100px;
+    gap:70px;
+    position: relative;
+}
+
+.elem{
+    height: 45%;
+    width:30%;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 10;
+    position: relative;
+}
+.elem h2{
+    height: 100%;
+    width:100%;
+    background-color: #95c11e;
+    font-size: 38px;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 50px;
+    color: #000;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale:1.1;
+    transition: all ease 0.5s;
+}
+
+.elem:hover h2{
+    color: #fff;
+    background-color: transparent;
+}
+.elem:hover img{
+    scale:1;
+}
+#page4 h1{
+    font-size: 85px;
+    position: absolute;
+    text-align: center;
+    font-weight: 900;
+    top:4.5%;
+    color:#000;
+    -webkit-text-stroke: 1px #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#footer{
+    height:50vh;
+    width:100%;
+    background: linear-gradient(to left bottom, #39aa32, #a5d621 );
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 0 100px;
+    gap:20px;
+}
+
+#footer>img{
+    height:100%;
+    position: absolute;
+    left:0%;
+    
+}
+.section{
+    width:32%;
+}
+#section1{
+    width:20%;
+}
+#section1 img{
+    height:100px;
+    width:100px;
+    scale: 1.4;
+}
+#section2 h2{
+    font-size: 30px;
+    font-weight: 900;
+    color: #000;
+    line-height: 50px;
+
+}
+#section3 h2{
+    font-size: 30px;
+    font-weight: 900;
+    color: #000;
+    line-height: 50px;
+
+}
+#section4{
+    width:19%;
+}
+#section4 p{
+    font-size: 19px;
+    line-height: 25px;
+    padding-bottom: 10px;
+    color: #000;
+    font-weight:600
+}
+#section4 h3{
+    font-weight: 900;
+    color: #000;
+    font-size: 22px;
+}
